@@ -4,3 +4,7 @@ export const addBook = (payload) => {
 export const showBooks = () =>{
     return {type: 'LIST'}
 }
+
+export const inc = () => {
+    return {type:'INC'}
+}

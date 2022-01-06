@@ -66,3 +66,7 @@
 
  
 }
+
+input[type="radio" i]{
+  margin: 5px -5px 0px 15px;
+}
