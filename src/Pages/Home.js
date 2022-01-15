@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const Home = () => {
     const books = useSelector((state) => state.books);
     console.log(books);
-    if (!books?.length) return <h1 className='App' style={{margin:'25px'}}>Oops! No Books in your store :( <br/> Please  <Link className="navlink" to={`/add`}>Add book </Link></h1>
+    if (!books?.length) return <h1 className='homehead'>Oops! No Books in your store :( <br/> Please  <Link className="navlink" to={`/add`}>Add book </Link></h1>
 
     return (
             <>

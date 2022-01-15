@@ -8,6 +8,8 @@ import Home from './Home'
 import Booklist from './Booklist'
 import Addbook from './Addbook'
 import NavBar from '../Components/NavBar'
+import Posts from './Posts';
+import Comments from './Comments';
 
 const Routing = () => {
     return (
@@ -18,6 +20,8 @@ const Routing = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/list" element={<Booklist />} />
                     <Route path="/add" element={<Addbook/>} />
+                    <Route path="/Posts" element={<Posts/>} />
+                    <Route path="/Comments" element={<Comments/>} />
                 </Routes>
             </BrowserRouter>
         </>

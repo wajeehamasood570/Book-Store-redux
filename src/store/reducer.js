@@ -18,10 +18,20 @@ const reducer = (state = initialState, action) => {
           ...state,
           books: [...state.books, ...newBook]
       }
+      case "GET_POST_SUCCESS":
+        console.log(action.payload)
+        return {
+            ...state,
+            posts: action.payload
+        }
 
-      // case: "INC": 
-      //   ...state,
-
+        case "GET_COMMENT_SUCCESS":
+            console.log(action.payload)
+            return {
+                ...state,
+                comment: action.payload
+            }
+    
 
     default:
       return state

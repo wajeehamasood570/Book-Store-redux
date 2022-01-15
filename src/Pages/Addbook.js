@@ -7,7 +7,6 @@ import { useSelector } from 'react-redux'
 
 const Addbook = () => {
     const books = useSelector((state) => state.books);
-
     const [title, settitle] = useState("");
     const [author, setauthor] = useState("");
     const [category, setCategory] = useState("");
@@ -26,6 +25,8 @@ const Addbook = () => {
     };
 
 
+
+
     const handleProductImgSelect = (e) => {
         const url = URL.createObjectURL(e?.target?.files[0]);
         setimage({
@@ -39,30 +40,44 @@ const Addbook = () => {
             <Container>
                 <br />
                 <br />
-                <Form onSubmit={handleSubmit} >
+                <Form method='POST' onSubmit={handleSubmit} >
                     <h3>Add a new Book!</h3>
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Book Image</Form.Label>
                         <br />
-                        <input type='file' onChange={(e) => handleProductImgSelect(e)} />
+                        <input
+                            type='file'
+                            name=''
+                            onChange={(e) => handleProductImgSelect(e)} />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Book Title:</Form.Label>
-                        <Form.Control onChange={(e) => settitle(e.target.value)} type="name" placeholder="Enter book name" />
+                        <input
+                            name="title"
+                            type="name"
+                            placeholder="Enter book name"
+                            onChange={(e) => settitle(e.target.value)}
+                        />
+
 
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Author Name:</Form.Label>
-                        <Form.Control onChange={(e) => setauthor(e.target.value)} type="name" placeholder="Enter author name" />
+                        <input
+                            name="author"
+                            type="name"
+                            placeholder="Enter author name"
+                            onChange={(e) => setauthor(e.target.value)}
+                        />
 
                     </Form.Group>
 
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Book category</Form.Label><br/>
+                        <Form.Label>Book category</Form.Label><br />
                         <ButtonGroup onChange={(e) => setCategory(e.target.value)}>
                             <input type="radio" id="html" name="fav_language" value="HTML" />
                             <label for="html" className='radio'>HTML</label>
@@ -76,7 +91,7 @@ const Addbook = () => {
 
 
 
-                    <Button variant="primary" type="submit" onClick={() => setActiveId(books.length + 1)}>
+                    <Button variant="primary" type="submit" onClick={() => {setActiveId(books.length + 1)}}>
                         Submit
                     </Button>
 
